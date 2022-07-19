@@ -1,5 +1,5 @@
 # Heart Condition Checker
-The app created with Python to predict person's heart health condition based on well-trained machine learning model (logistic regression).
+The app created with Python to predict person's heart health condition based on well-trained machine learning model ().
 
 ## Table of Contents
 1. [General info](#general-info)
@@ -17,25 +17,4 @@ The logistic regression model was found to be satisfactorily accurate (accuracy 
 
 
 ## Installation
-The project was uploaded to the web using heroku. You can use it online at the following link: https://share.streamlit.io/kamilpytlak/heart-condition-checker/main/app.py. If you want to use this app on your local machine, make sure that you have installed the necessary modules in a version no smaller than the one specified in the `requirements.txt` file. You can either install them globally on your machine or create a virtual environment (`pipenv`), which is highly recommended.
-1.  Install the packages according to the configuration file `requirements.txt`.
-```
-pip install -r requirements.txt
-```
 
-2.  Ensure that the `streamlit` package was installed successfully. To test it, run the following command:
-```
-streamlit hello
-```
-If the example application was launched in the browser tab, everything went well. You can also specify a port if the default doesn't respond:
-```
-streamlit hello --server.port port_number
-```
-Where `port_number` is a port number (8889, for example).
-
-3.  To start the app, type:
-```
-streamlit run app.py
-```
-
-And that's it! Now you can predict your heart health condition expressed as a binary variable based on a dozen factors that best describe you.
