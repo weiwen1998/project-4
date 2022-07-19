@@ -1,8 +1,6 @@
 # Heart Condition Checker
 The app created with Python to predict person's heart health condition based on well-trained machine learning model (logistic regression).
 
-![App overview](https://i.imgur.com/4wTlvKj.png)
-
 ## Table of Contents
 1. [General info](#general-info)
 2. [Technologies](#technologies)
@@ -16,7 +14,7 @@ In this project, logistic regression was used to predict person's heart health c
 The logistic regression model was found to be satisfactorily accurate (accuracy approx. 80%).
 
 ## Technologies
-The app is fully written in Python 3.9.9. `streamlit 1.5.1` was used to create the user interface, and the machine learning itself was designed using the module `scikit-learn 1.0.2`. `pandas 1.41.`, `numpy 1.22.2` and `polars 0.13.0` were used to perform data converting operations.
+
 
 ## Installation
 The project was uploaded to the web using heroku. You can use it online at the following link: https://share.streamlit.io/kamilpytlak/heart-condition-checker/main/app.py. If you want to use this app on your local machine, make sure that you have installed the necessary modules in a version no smaller than the one specified in the `requirements.txt` file. You can either install them globally on your machine or create a virtual environment (`pipenv`), which is highly recommended.
