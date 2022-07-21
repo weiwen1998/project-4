@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Predictor</title>
+</head>
+    <body>
+        <form method=post enctype=multipart/form-data>
+            <label for="sex">What is your sex?</label>
+            <select id="sex" name="sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <br>
+            <label for="age-category">What is your age?</label>
+            <select id="age-category" name="age-category">
+                <option value="18 - 34">18 - 34</option>
+                <option value="35 - 64">35 - 64</option>
+                <option value="65 or older">65 or older</option>
+            </select>
+            <label for="gen-health">How would you rate your general health?</label>
+            <select id="gen-health" name="gen-health">
+                <option value="Excellent">Excellent</option>
+                <option value="Very good">Very good</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+                <option value="Poor">Poor</option>    
+            </select>
+            <label for="stroke">Have you ever had a stroke?</label>
+            <select id="stroke" name="stroke">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>   
+            </select>
+            <label for="diabetic">Have you ever been diagnosed with diabetes?</label>
+            <select id="diabetic" name="diabetic">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>   
+            </select>
+            <label for="kidney-disease">Have you ever been diagnosed with kidney disease?</label>
+            <select id="kidney-disease" name="kidney-disease">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>   
+            </select>
+            <label for="smoking">Have you smoked at least 100 cigarettes in your entire life?</label>
+            <select id="kidney-disease" name="kidney-disease">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>   
+            </select>
+            <label for="alcohol">Would you be considered a heavy drinker? (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week)</label>
+            <select id="alcohol" name="alcohol">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>   
+            </select>
+            
+            <input type="submit" value="Submit" id="search_form_input">
+        </form>
+    
+        <h3>Your heart disease risk is: {{ result }}</h3>
+
+    </body>
+</html>
