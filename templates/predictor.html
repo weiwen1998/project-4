@@ -1,135 +1,150 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Heart Disease Predictor</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-    <body style="box-sizing:border-box; ">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- <a class="navbar-brand" href="index.html">Home<span class="sr-only">(current)</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button> -->
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="/" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Home
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/predictor" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    Predictor
-                  </a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Analysis
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/tableau">Tableau Analysis 1</a>
-                    <a class="dropdown-item" href="/first_story">Tableau Analysis 2</a>
-        
-                  </div>
-                </li>
-              </ul>
+<html lang="en">
+  
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- our CSS -->
+    <link rel="stylesheet" href="templates/static/css/style.css">
+
+    <!--Activate JavaScript.JQuery Library-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    
+    <title>Personal Predictors of Heart Disease</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Predictors of Heart Disease</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/predictor" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Predictor Tool</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Visualisations</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/tableau-analysis-1">Tableau Analysis 1</a>
+              <a class="dropdown-item" href="/tableau-analysis-2">Tableau Analysis 2</a>
             </div>
-          </nav>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-          <div class="container-flex">
-            <div class="row">
-                <div class="col-md-4 bg-light">
-                    <form method=post enctype=multipart/form-data>
-                        <label for="sex" class="form-label">What is your sex?</label>
-                        <br>
-                        <select id="sex" name="sex" class="form-select">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
+    <div class="row padded">
+      <div class="col-lg-7 col-md-12">
+        <form method=post enctype=multipart/form-data>
+          <label for="sex" class="form-label">What is your sex?</label>
+            <select id="sex" name="sex" class="form-select">
+              <option selected disabled>Please select...</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            
+          <br>
 
-                        <br>
+          <label for="age-category" class="form-label">What is your age?</label>
+            <select id="age-category" name="age-category" class="form-select">
+              <option selected disabled>Please select...</option>
+              <option value="18 - 34">18 - 34</option>
+              <option value="35 - 64">35 - 64</option>
+              <option value="65 or older">65 or older</option>
+            </select>
 
-                        <label for="age-category" class="form-label">What is your age?</label>
-                        <br>
-                        <select id="age-category" name="age-category" class="form-select">
-                            <option value="18 - 34">18 - 34</option>
-                            <option value="35 - 64">35 - 64</option>
-                            <option value="65 or older">65 or older</option>
-                        </select>
+          <br>
 
-                        <br>
+          <label for="gen-health" class="form-label">How would you rate your general health?</label>
+            <select id="gen-health" name="gen-health" class="form-select">
+              <option selected disabled>Please select...</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Very good">Very good</option>
+              <option value="Good">Good</option>
+              <option value="Fair">Fair</option>
+              <option value="Poor">Poor</option>    
+            </select>
 
-                        <label for="gen-health" class="form-label">How would you rate your general health?</label>
-                        <br>
-                        <select id="gen-health" name="gen-health" class="form-select">
-                            <option value="Excellent">Excellent</option>
-                            <option value="Very good">Very good</option>
-                            <option value="Good">Good</option>
-                            <option value="Fair">Fair</option>
-                            <option value="Poor">Poor</option>    
-                        </select>
+          <br>
 
-                        <br>
+          <label for="stroke" class="form-label">Have you ever had a stroke?</label>
+            <select id="stroke" name="stroke" class="form-select">
+              <option selected disabled>Please select...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>   
+            </select>
 
-                        <label for="stroke" class="form-label">Have you ever had a stroke?</label>
-                        <br>
-                        <select id="stroke" name="stroke" class="form-select">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>   
-                        </select>
+          <br>
 
-                        <br>
+          <label for="diabetic" class="form-label">Have you ever been diagnosed with diabetes?</label>
+            <select id="diabetic" name="diabetic" class="form-select">
+              <option selected disabled>Please select...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>   
+            </select>
 
+          <br>
 
-                        <label for="diabetic" class="form-label">Have you ever been diagnosed with diabetes?</label>
-                        <br>
-                        <select id="diabetic" name="diabetic" class="form-select">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>   
-                        </select>
+          <label for="kidney-disease" class="form-label">Have you ever been diagnosed with kidney disease?</label>
+            <select id="kidney-disease" name="kidney-disease" class="form-select">
+              <option selected disabled>Please select...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>   
+            </select>
 
-                        <br>
+          <br>
 
-                        <label for="kidney-disease" class="form-label">Have you ever been diagnosed with kidney disease?</label>
-                        <br>
-                        <select id="kidney-disease" name="kidney-disease" class="form-select">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>   
-                        </select>
+          <label for="smoking" class="form-label">Have you smoked at least 100 cigarettes in your entire life?</label>
+            <select id="smoking" name="smoking" class="form-select">
+              <option selected disabled>Please select...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>   
+            </select>
 
-                        <br>
+          <br>
 
-                        <label for="smoking" class="form-label">Have you smoked at least 100 cigarettes in your entire life?</label>
-                        <br>
-                        <select id="smoking" name="smoking" class="form-select">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>   
-                        </select>
-
-                        <br>
-
-                        <label for="alcohol" class="form-label">Would you be considered a heavy drinker? (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week)</label>
-                        <br>
-                        <select id="alcohol" name="alcohol" class="form-select">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>   
-                        </select>
-                        <br>
-
-                        <div style="width:100%; text-align:center">
-                            <input class="btn btn-danger mt-3" style="width:40%" type="submit" value="Submit" id="search_form_input">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-8">
-                    <h3>Your heart disease risk is: {{ result }}</h3>
-                </div>
-            </div>
+          <label for="alcohol" class="form-label">Would you be considered a heavy drinker? (adult men having more than 14 drinks per week and adult women having more than 7 drinks per week)</label>
+          <select id="alcohol" name="alcohol" class="form-select">
+            <option selected disabled>Please select...</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>   
+          </select>
+          <br>
+          
+          <div style="width:100%; text-align:center">
+            <input class="btn btn-danger mt-3" style="width:40%" type="submit" value="Submit" id="search_form_input">
           </div>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    </body>
+        </form>
+      </div>
+      <div class="col-lg-1 col-md-12"></div>    
+      <div class="col-lg-4 col-md-12 result">
+        <h3>Selected options:</h3>
+          <ul>
+            <li>Sex: {{ sex }}</li>
+            <li>Age category: {{ age_category }}</li>
+            <li>General health: {{ gen_health }}</li>
+            <li>Stroke: {{ stroke }}</li>
+            <li>Diabetes: {{ diabetes }}</li>
+            <li>Kidney Disease: {{ kidney_disease }}</li>
+            <li>Smoked at least 100 cigarettes: {{ smoking }}</li>
+            <li>Heavy drinker: {{ alcohol }}</li>
+          </ul>
+          <hr>
+        <h3><strong>Your result is:</strong> 
+          <br>
+          <br>
+          {{ result }}</h3>
+      </div>
+    </div>
+  </body>
 </html>

@@ -34,19 +34,19 @@ def predict_heart_disease(sex, age_category, gen_health, stroke, diabetic, kidne
                     "Diabetic":diabetic,
                     "KidneyDisease":kidney_disease,
                     "Smoking":smoking,
-                    "AlcoholDrinking":alcohol}, index=[0])
+                    "AlcoholDrinking":alcohol}, index=[0])              
 
     for col in cat_columns:
         df[col].replace(dict_all_loaded[col], inplace=True)
 
     loaded_model = pickle.load(open(filename, 'rb'))
 
-    result = loaded_model.predict(data)
+    result = loaded_model.predict(df)
 
     if result[0] == 0:
-        return "No heart disease risk"
+        return "Low heart disease risk"
     else:
-        return "Heart disease risk"
+        return "High heart disease risk"
 
 
 
@@ -68,10 +68,27 @@ def predictor():
 
         prediction = predict_heart_disease(sex, age_category, gen_health, stroke, diabetic, kidney_disease, smoking, alcohol)
 
-        return render_template('predictor.html', result = prediction)
+        return render_template('predictor.html', 
+                                result = prediction, 
+                                sex = sex, 
+                                age_category = age_category,
+                                gen_health = gen_health,
+                                stroke = stroke,
+                                diabetic = diabetic,
+                                kidney_disease = kidney_disease,
+                                smoking = smoking,
+                                alcohol = alcohol)
 
     else:
-        return render_template("predictor.html")
+        return render_template("/predictor.html")
+
+@app.route("/tableau-analysis-1")
+def tableau_1():
+    return render_template("tableau-analysis-1.html")
+
+@app.route("/tableau-analysis-2")
+def tableau_2():
+    return render_template("tableau-analysis-2.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
