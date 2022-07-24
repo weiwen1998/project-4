@@ -15,6 +15,36 @@ The logistic regression model was found to be satisfactorily accurate (accuracy 
 
 ## Technologies
 
+### Visualisation
 
-## Installation
+* Tableau
+* HTML / CSS
 
+### Backend
+
+* Flask (API)
+
+### Machine Learning
+
+* Sklearn (Logistic Regression / Random Forest)
+* Imbalanced Learn (Because dataset is severely imbalanced)
+
+## Model Analysis
+
+Since we wanted to classify whether someone had heart disease or not (classification), we used Logistic Regression and Random Forest Classification. We had to use Random Undersampling to balnce our data (we had more samples of people without heart disease than people with).
+
+Overall, logistic regression had a higher accuracy than random forest. However, Random Forest had a higher recall (.79 compared to Logistic regression's .70). This means that Random Forest predicted more of the samples with heart disease, but Logistic Regression had higher overall accuracy.
+
+## Feature Importance
+
+Both models said the most important categories are:
+
+* Age
+* Stroke History
+* Diabetic
+* Gender
+* Smoking
+
+## Dashboard
+
+Link to Tableau - Nicholas & Ramana 
