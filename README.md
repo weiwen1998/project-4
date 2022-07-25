@@ -76,4 +76,4 @@ Random Forest Model
 
 ## Dashboard
 
-Link to Tableau - Nicholas (https://public.tableau.com/app/profile/nicholas4845/viz/Book1_16581366231650/FactorsofHeartDisease?publish=yes) & Ramana 
+https://public.tableau.com/app/profile/nicholas4845/viz/Book1_16581366231650/FactorsofHeartDisease?publish=yes
