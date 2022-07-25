@@ -1,8 +1,15 @@
 # Heart Condition Checker
-The app created with Python to predict person's heart health condition based on well-trained machine learning model ().
+An application developed with Python to predict heart disease risk using Logistic Regression model.
+
+## Contributers
+* Tan Wei Wen - https://github.com/weiwen1998
+* Sarah Casauria - https://github.com/sarahcasauria
+* Ramana Ganesula - https://github.com/kramana193
+* Michael Dunne - https://github.com/michaeldunneMD17
+* Nicholas Chatjaval - https://github.com/nchatj
 
 ## Table of Contents
-1. [General info](#general-info)
+1. [Introduction](#introduction)
 2. [Techniques Used](#software-used)
     1. Python
     2. Tableau
@@ -12,7 +19,7 @@ The app created with Python to predict person's heart health condition based on 
 4. [Visualisation](#visualisation)
 5. [Web App Interface](#web-app-interface)
 
-## General info
+## Introduction
 In this project, we utilised a large health dataset to build and compare machine learning models in their ability to predict heart disease using a range of health parameters. 
 
 We downloaded a dataset from Kaggle titled [Personal Key Indicators of Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease). This dataset contains a total of approximately 300,000 responses from an annual telephone survey of the health of U.S. residents undertaken in 2020. The original dataset is publicly available on the [Center for Disease Control and Prevention](https://www.cdc.gov/brfss/annual_data/annual_2020.html). This data is originally stored in SAS format and contains over 200 variables.
