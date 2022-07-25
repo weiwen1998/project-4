@@ -77,3 +77,5 @@ Random Forest Model
 ## Dashboard
 
 https://public.tableau.com/app/profile/nicholas4845/viz/Book1_16581366231650/FactorsofHeartDisease?publish=yes
+https://public.tableau.com/app/profile/ramana7009/viz/FinalProject-HeartDieseasePrediction/TheStory?publish=yes
+
