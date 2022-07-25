@@ -1,5 +1,5 @@
-# Heart Condition Checker
-An application developed with Python to predict heart disease risk using Logistic Regression model.
+# Predicting Heart Disease Risk With Machine Learning
+An application developed with Python to predict heart disease risk using Logistic Regression model. Repository submitted for Data Analytics Bootcamp Final Project.
 
 ## Contributers
 * Tan Wei Wen - https://github.com/weiwen1998
