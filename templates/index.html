@@ -39,6 +39,9 @@
               <a class="dropdown-item" href="/tableau-analysis-2">Tableau Analysis 2</a>
             </div>
           </li>
+          <li class = "nav-item dropdown">
+            <a class="nav-link" href="https://github.com/weiwen1998/project-4" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">GitHub Repository</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -48,6 +51,7 @@
         <div class="container heading">
           <h1>Predictors of Heart Disease</h1>
           <p>An Analysis on the impacts of heart disease on others, including a variety of different factors.</p>
+          <hr>
         </div>
       </div>
     </div>
@@ -55,7 +59,7 @@
     <div class="row">
       <div class ="col-12">
         <div class = "centered-container">
-          <img src = 'https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20210118115944/ri/673/picture/2021/1/shutterstock_1576424071.jpg'>
+          <img src = 'https://images.unsplash.com/photo-1628348070889-cb656235b4eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'>
         </div>
       </div>
     </div>
@@ -67,6 +71,36 @@
           <p>
             Heart disease is one of the common diseases that caused many deaths around the world, in which are varied between a variety of demographics.
             This project discusses how heart disease has been predicted based on a variety of different activities that people have engaged in, as well as a variety of different health factors.
+          </p>
+          <h3><strong>Project Purpose</strong></h3>
+          <p>
+            To build a machine-learning model that can predict heart disease risk using different health parameters.
+          </p>
+          <h3><strong>Methods</strong></h3>
+          <p>
+            For the machine-learning model, we used a dataset containing survey responses from over 300,000 people in the United States.
+            Respondents were surveyed on various health parameters, including BMI, Age, Physical activity, General health, and various medical conditions.
+            <br>
+            This data can be freely accessed on <a href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease">Kaggle</a>.
+            The Kaggle data is based on an original, larger dataset available on the <a href="https://www.cdc.gov/brfss/annual_data/annual_2020.html">Centers for Disease Control and Prevention (CDC) website</a>.
+            <br>
+            We reduced the dataset down to the following 8 parameters that we wished to use for our predictor tool:
+            <ul>
+              <li>Sex</li>
+              <li>Age Category</li>
+              <li>General Health</li>
+              <li>Stroke</li>
+              <li>Diabetes</li>
+              <li>Kidney Disease</li>
+              <li>Smoking habits</li>
+              <li>Alcohol Drinking habits</li>
+            </ul>
+            Once the data was reduced and encoded, we created a random forest model and logistic regression model and compared the two for accuracy.
+          </p>
+          <h3><strong>Results</strong></h3>
+          <p>
+            After building a random forest model and logistic regression model, the logistic regression model was more accurate, with an overall predicting accuracy of 73% using the chosen 8 parameters.
+            The logistic regression model was then saved and adapted into a web application using Flask. The app was then deployed to Heroku.
           </p>
         </div>
       </div>
