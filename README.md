@@ -8,8 +8,7 @@ The app created with Python to predict person's heart health condition based on 
 
 
 ## General info
-In this project, logistic regression was used to predict person's heart health condition expressed as a dichotomous variable (heart disease: yes/no). The model was trained on approximately 70,000 data from an annual telephone survey of the health of U.S. residents from the year 2020. The dataset is publicly available at the following link: https://www.cdc.gov/brfss/annual_data/annual_2020.html. The data is originally stored in SAS format. The original dataset contains approx. 400,000 rows and over 200 variables. The data conversion and cleaning process is described in another repository: https://github.com/kamilpytlak/data-analyses/tree/main/heart-disease-prediction. This project contains:
-* the app - the application construct is located in the `app.py` file. This file uses data from the `data` folder and saved (previously trained) ML models from the `model` folder.
+In this project, logistic regression was used to predict person's heart health condition expressed as a dichotomous variable (heart disease: yes/no). The model was trained on approximately 70,000 data from an annual telephone survey of the health of U.S. residents from the year 2020. The dataset is publicly available at the following link: https://www.cdc.gov/brfss/annual_data/annual_2020.html. The data is originally stored in SAS format. The original dataset contains approx. 400,000 rows and over 200 variables. 
 
 ## Technologies
 
@@ -26,7 +25,8 @@ In this project, logistic regression was used to predict person's heart health c
 ### Backend
 
 * Flask (API)
-<img width="680" alt="Flask - API" src="https://user-images.githubusercontent.com/96853408/180678270-6a652f1f-2051-405a-b180-9cd983c55e07.png">
+![image](https://user-images.githubusercontent.com/96853408/180737260-bb729ef0-62bc-48d9-b37c-52bd2d003346.png)
+
 
 
 
