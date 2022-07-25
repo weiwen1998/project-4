@@ -67,9 +67,11 @@ Results from both models are heavily depedent on the following categories.
 * Alcohol Consumption
 
 Logistic Regresion Model 
+
 <img width="356" alt="Logistic Regression - Importance  " src="https://user-images.githubusercontent.com/96853408/180677930-cf7853ef-a421-436c-8a3d-77aaf7abf5b6.png">
 
 Random Forest Model 
+
 <img width="259" alt="Forest Model - Importance " src="https://user-images.githubusercontent.com/96853408/180677848-0791b9ea-eb6e-4d51-a28f-7970a8134f66.png">
 
 ## Dashboard
