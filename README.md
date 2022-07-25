@@ -10,7 +10,7 @@ An application developed with Python to predict heart disease risk using Logisti
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Techniques Used](#software-used)
+2. [Software Used](#software-used)
     1. Python
     2. Tableau
     3. HTML/CSS
