@@ -3,79 +3,75 @@ The app created with Python to predict person's heart health condition based on 
 
 ## Table of Contents
 1. [General info](#general-info)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-
+2. [Techniques Used](#software-used)
+    1. Python
+    2. Tableau
+    3. HTML/CSS
+    4. Heroku
+3. [Machine Learning](#machine-learning)
+4. [Visualisation](#visualisation)
+5. [Web App Interface](#web-app-interface)
 
 ## General info
-In this project, logistic regression was used to predict person's heart health condition expressed as a dichotomous variable (heart disease: yes/no). The model was trained on approximately 70,000 data from an annual telephone survey of the health of U.S. residents from the year 2020. The dataset is publicly available at the following link: https://www.cdc.gov/brfss/annual_data/annual_2020.html. The data is originally stored in SAS format. The original dataset contains approx. 400,000 rows and over 200 variables. 
+In this project, we utilised a large health dataset to build and compare machine learning models in their ability to predict heart disease using a range of health parameters. 
 
-## Technologies
+We downloaded a dataset from Kaggle titled [Personal Key Indicators of Heart Disease](https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease). This dataset contains a total of approximately 300,000 responses from an annual telephone survey of the health of U.S. residents undertaken in 2020. The original dataset is publicly available on the [Center for Disease Control and Prevention](https://www.cdc.gov/brfss/annual_data/annual_2020.html). This data is originally stored in SAS format and contains over 200 variables.
 
-### Visualisation
+After building a random forest model and logistic regression model, the logistic regression model was more accurate, with an overall predicting accuracy of 73% using the chosen 8 parameters. This model was used to predict a person's risk of heart disease expressed as a dichotomous variable (heart disease: yes/no). The logistic regression model was then saved and loaded into a Flask application, which was then hosted on Heroku. The web app can be found [here.](https://project-4-heart-disease.herokuapp.com/)
 
-* Tableau
-<img width="955" alt="Tableau " src="https://user-images.githubusercontent.com/96853408/180678154-1724551a-ccb6-4e8c-9f53-8de1e921b22e.png">
-<img width="379" alt="Tableau - Factors of Heart Disease " src="https://user-images.githubusercontent.com/96853408/180678177-7a1d4512-5b3d-4323-90f5-4c435eb6f674.png">
+## Software Used
+* We used a range of python modules to build and test machine learning models, including:
+  * pandas to read in the data
+  * scikit-learn to build and test the machine learning models
+  * pickle to save python objects
+  * flask to build a web application
+  * matplotlib and seaborn to visualise data
+* We also completed a descriptive analysis of the dataset using Tableau visualisation software
+* We used HTML and CSS to build webpages to host our visualisations and our predictor tool
+* We then deployed our application to Heroku.
 
-* HTML / CSS
-<img width="471" alt="HTML " src="https://user-images.githubusercontent.com/96853408/180678201-e2c789e4-8cba-4a35-a791-3b7ff64feec8.png">
+## Machine Learning
 
+### Choosing a model
+Since we wanted to classify whether someone had heart disease or not (classification), we used Logistic Regression and Random Forest Classification.
 
-### Backend
+![Sklearn - models ](images/ml.png)
 
-* Flask (API)
-![image](https://user-images.githubusercontent.com/96853408/180737260-bb729ef0-62bc-48d9-b37c-52bd2d003346.png)
+Overall, our Logistic Regression had a higher accuracy than our random forest model (73% vs 71% respectively). Therefore, we decided to use the logistic regression model for our application.
 
+![Logistic Regression](images/confusion-logistic.png)
 
+![Random Forest](images/confusion-forest.png)
 
+### Feature Importances
 
-### Machine Learning
+A comparison of the 8 chosen features that we used in our two machine learning models shows that Age Category was the most important feature for accurate predictions:
 
-* Sklearn (Logistic Regression / Random Forest)
-![Sklearn - models ](https://user-images.githubusercontent.com/96853408/180677787-871e58e1-2393-456f-bbb3-cfe684ff37e8.png)
+**Logistic Regresion Model** 
 
-* Imbalanced Learn (Because dataset is severely imbalanced)
-<img width="604" alt="Machine Learning - Imbalance " src="https://user-images.githubusercontent.com/96853408/180677807-e28d2887-edb9-476a-ab7a-ca3e602e1e40.png">
+![Logistic regression feature importances](images/features-logistic.png)
 
+**Random Forest Model**
 
-## Model Analysis
+![Random forest feature importances](images/features-forest.png)
 
-Since we wanted to classify whether someone had heart disease or not (classification), we used Logistic Regression and Random Forest Classification. We had to use Random Undersampling to balnce our data (we had more samples of people without heart disease than people with).
+## Visualisation
+We created two story visualisations in Tableau to visualise our data in a meaningful manner. Both of these stories were embedded into HTML pages and were deployed into our Heroku app.
 
-Overall, Logistic Regression had a higher accuracy than random forest. However, Random Forest had a higher recall (.79 compared to Logistic regression's .70). 
-<img width="539" alt="Logistic Regression " src="https://user-images.githubusercontent.com/96853408/180678128-1548debd-117f-4f62-9a21-d330f5e3edd4.png">
+* Analysis 1 - https://public.tableau.com/app/profile/ramana7009/viz/FinalProject-HeartDieseasePrediction/TheStory?publish=yes 
 
-<img width="553" alt="Random Forest Model" src="https://user-images.githubusercontent.com/96853408/180678137-094c9bda-b624-4e90-acf0-18ec9fc5b263.png">
+![Tableau analysis 1](images/tableau-1.png)
 
+* Analysis 2 - https://public.tableau.com/app/profile/nicholas4845/viz/Book1_16581366231650/FactorsofHeartDisease?publish=yes
 
-This means that Random Forest predicted more of the samples with heart disease, but Logistic Regression had higher overall accuracy.
+![Tableau analysis 2](images/tableau-2.png)
 
+## Web App Interface
+We utilised HTML to build our predictor tool and display our Tableau visualisations. Each webpage features a navigation bar powered by Bootstrap. Each webpage was styled using CSS.
 
+![index page](images/index.png)
 
-## Categories of Importance
+Our Flask app incorporated a GET/REQUEST API that allowed inputs to be collected from our predictor webpage to then run through our logistic regression model. Webpage users are able to use dropdown options to provide answers to the set questions. Once users press "Submit", the predictor tool will tell them whether or not they are at risk of heart disease based on their answers. For reference, the user's answers are also displayed on the prediction page above the result.
 
-Results from both models are heavily depedent on the following categories. 
-
-* Age
-* Stroke History
-* Diabetic
-* Gender
-* Smoking
-* Kidney Disease 
-* General Health 
-* Alcohol Consumption
-
-Logistic Regresion Model 
-
-<img width="356" alt="Logistic Regression - Importance  " src="https://user-images.githubusercontent.com/96853408/180677930-cf7853ef-a421-436c-8a3d-77aaf7abf5b6.png">
-
-Random Forest Model 
-
-<img width="259" alt="Forest Model - Importance " src="https://user-images.githubusercontent.com/96853408/180677848-0791b9ea-eb6e-4d51-a28f-7970a8134f66.png">
-
-## Dashboard
-
-https://public.tableau.com/app/profile/nicholas4845/viz/Book1_16581366231650/FactorsofHeartDisease?publish=yes
-https://public.tableau.com/app/profile/ramana7009/viz/FinalProject-HeartDieseasePrediction/TheStory?publish=yes
+![Predictor tool](images/predictor.png)
 
